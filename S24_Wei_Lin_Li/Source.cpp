@@ -3,10 +3,15 @@
 
 class MyGame : public Empire::EmpireApplication
 {
+	virtual void Initialize() override
+	{
+		//my_window.Create(1000, 800);
+	}
 	virtual void OnUpdate() override
 	{
-		std::cout << "Engine is running" << std::endl;
+		std::cout << "Window Width " << Empire::EmpireWindow::GetWindow()->GetWidth() << std::endl;
 	}
+private:
 
 };
 

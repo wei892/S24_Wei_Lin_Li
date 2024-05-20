@@ -102,10 +102,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EMPIRE_LIB;EMPIRE_MS_COMPILER;EMPIRE_DEBUG=2</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EMPIRE_LIB;EMPIRE_MS_COMPILER;EMPIRE_DEBUG=2;EMPIRE_GLFW_WINDOW</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Empire\src;$(SolutionDir)glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,10 +120,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EMPIRE_LIB;EMPIRE_MS_COMPILER;EMPIRE_MS_COMPILER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EMPIRE_LIB;EMPIRE_MS_COMPILER;EMPIRE_MS_COMPILER;EMPIRE_GLFW_WINDOW</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Empire\src;$(SolutionDir)glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,16 +136,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\Empire.h" />
+    <ClInclude Include="src\codeGLFW\WindowGLFW.h" />
     <ClInclude Include="src\EmpireApplication.h" />
+    <ClInclude Include="src\EmpireWindow.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\Ultility.h" />
+    <ClInclude Include="src\WindowImpl.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\codeGLFW\WindowGLFW.cpp" />
     <ClCompile Include="src\EmpireApplication.cpp" />
+    <ClCompile Include="src\EmpireWindow.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\glfw_build\src\glfw.vcxproj">
+      <Project>{70d9d60b-f38d-3205-8b33-86a4b0572cb5}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
