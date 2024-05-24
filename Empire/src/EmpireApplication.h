@@ -11,7 +11,7 @@ namespace Empire
 	class EMPIRE_API EmpireApplication
 	{
 	public:
-
+		EmpireApplication();
 		virtual void Initialize();
 		virtual void OnUpdate();
 		virtual void Shutdown();
@@ -22,10 +22,13 @@ namespace Empire
 		void SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc);
 		void SetWindowCloseCallback(std::function<void()> callbackFunc);
 
+		void DefaultWindowCloseHandler();
 
 	private:
 		std::chrono::steady_clock::time_point mNextFrameTime;
 		std::chrono::milliseconds mFrameDuration{ std::chrono::milliseconds{ 1000 } / EMPIRE_FRAME_RATE };
+
+		bool mShouldContinue{ true };
 	};
 
 }

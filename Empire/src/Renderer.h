@@ -4,6 +4,7 @@
 #include "Ultility.h"
 #include "Image.h"
 #include "RendererImplement.h"
+#include "Unit.h"
 
 namespace Empire
 {
@@ -14,6 +15,7 @@ namespace Empire
 		static Renderer* GetInstance();
 		static void Draw(Image& pic, int x, int y);
 		static void Draw(Image& pic, Shader& shader, int x, int y);
+		static void Draw(Unit& unit);
 		static void ClearScreen();
 
 	private:

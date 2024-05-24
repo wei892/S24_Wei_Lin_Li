@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef EMPIRE_GLFW_WINDOW
+//#ifdef EMPIRE_GLFW_WINDOW
 	#define EMPIRE_KEY_SPACE              32
 	#define EMPIRE_KEY_APOSTROPHE         39  /* ' */
 	#define EMPIRE_KEY_COMMA              44  /* , */
@@ -124,6 +124,6 @@
 	#define EMPIRE_KEY_RIGHT_SUPER        347
 	#define EMPIRE_KEY_MENU               348
 
-#else
-	#defintion_EMPIRE_EMPIRE_is_missing
-#endif
+//#else
+//	#defintion_EMPIRE_EMPIRE_is_missing
+//#endif

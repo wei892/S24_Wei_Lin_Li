@@ -25,6 +25,7 @@ namespace Empire {
 		int mYPosition;
 
 		friend EMPIRE_API bool UnitsOverlap(const Unit& a, const Unit& b);
+		friend class Renderer;
 	};
 	EMPIRE_API bool UnitsOverlap(const Unit& a, const Unit& b);
 }

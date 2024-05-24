@@ -12,6 +12,17 @@
 
 namespace Empire
 {
+    EmpireApplication::EmpireApplication()
+    {
+         EmpireWindow::Init();
+         EmpireWindow::GetWindow()->Create(1000, 800);
+
+         SetWindowCloseCallback([this]() {DefaultWindowCloseHandler(); });
+
+         Renderer::Init();
+
+    }
+
     void EmpireApplication::Initialize()
     {
 
@@ -29,37 +40,16 @@ namespace Empire
 
     void EmpireApplication::Run()
     {
-        
-        EmpireWindow::Init();
-        EmpireWindow::GetWindow()->Create(1000, 800);
-
-        Renderer::Init();
-
-        // Vertex Shader Source
-        Shader sProg{ "C:\\Users\\wli24\\Documents\\CXX_Projects\\S24_Wei_Lin_Li\\Empire\\Assets\\Shaders\\DefaultVertexShader.glsl", "C:\\Users\\wli24\\Documents\\CXX_Projects\\S24_Wei_Lin_Li\\Empire\\Assets\\Shaders\\DefaultFragmentShader.glsl" };
-
-        // Texture
-        Empire::Image pic{ "C:\\Users\\wli24\\Documents\\CXX_Projects\\S24_Wei_Lin_Li\\Empire\\Assets\\Textures\\Test.png" };
-
         Initialize();
 
         mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
-        int x{ 50 };
-
-        SetKeyPressedCallback([&](const KeyPressed& event) {
-            if (event.GetKeyCode() == EMPIRE_KEY_RIGHT)
-                x += 50;
-        });
 
         // Main loop
-        while (true)
+        while (mShouldContinue)
         {
             Renderer::ClearScreen();
 
             OnUpdate();
-
-            Renderer::Draw(pic, x, 100);
-            //x += 20;
 
             std::this_thread::sleep_until(mNextFrameTime);
             mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
@@ -70,6 +60,7 @@ namespace Empire
         Shutdown();
         EmpireWindow::Shutdown();
     }
+
     void EmpireApplication::SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc)
     {
         EmpireWindow::GetWindow()->SetKeyPressedCallback(callbackFunc);
@@ -83,5 +74,10 @@ namespace Empire
     void EmpireApplication::SetWindowCloseCallback(std::function<void()> callbackFunc)
     {
         EmpireWindow::GetWindow()->SetWindowCloseCallback(callbackFunc);
+    }
+
+    void EmpireApplication::DefaultWindowCloseHandler()
+    {
+        mShouldContinue = false;
     }
 }
