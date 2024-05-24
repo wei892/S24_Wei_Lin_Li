@@ -45,6 +45,24 @@
     <ClInclude Include="src\codeOpenGL\ImageOpenGL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShaderImplement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\codeOpenGL\ShaderOpenGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RendererImplement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\codeOpenGL\RendererOpenGl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -59,10 +77,22 @@
     <ClCompile Include="src\codeGLFW\WindowGLFW.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\codeOpenGL\ImageOpenGL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\codeOpenGL\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\codeOpenGL\ShaderOpenGL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\codeOpenGL\ImageOpenGL.cpp">
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\codeOpenGL\RendererOpenGl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
