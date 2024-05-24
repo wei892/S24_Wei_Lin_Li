@@ -8,6 +8,7 @@
 #include "Image.h"
 #include "Shader.h"
 #include "Renderer.h"
+#include "EmpireKeys.h"
 
 namespace Empire
 {
@@ -45,6 +46,11 @@ namespace Empire
         mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
         int x{ 50 };
 
+        SetKeyPressedCallback([&](const KeyPressed& event) {
+            if (event.GetKeyCode() == EMPIRE_KEY_RIGHT)
+                x += 50;
+        });
+
         // Main loop
         while (true)
         {
@@ -53,15 +59,29 @@ namespace Empire
             OnUpdate();
 
             Renderer::Draw(pic, x, 100);
-            x += 20;
+            //x += 20;
 
             std::this_thread::sleep_until(mNextFrameTime);
             mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
-            EmpireWindow::GetWindow()->SwapBuffers();
+            EmpireWindow::GetWindow()->SwapBuffers(); 
             EmpireWindow::GetWindow()->PollEvents();
         }
         Shutdown();
         EmpireWindow::Shutdown();
+    }
+    void EmpireApplication::SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc)
+    {
+        EmpireWindow::GetWindow()->SetKeyPressedCallback(callbackFunc);
+    }
+
+    void EmpireApplication::SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc)
+    {
+        EmpireWindow::GetWindow()->SetKeyReleasedCallback(callbackFunc);
+    }
+
+    void EmpireApplication::SetWindowCloseCallback(std::function<void()> callbackFunc)
+    {
+        EmpireWindow::GetWindow()->SetWindowCloseCallback(callbackFunc);
     }
 }

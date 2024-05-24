@@ -54,4 +54,18 @@ namespace Empire
 	{
 		return mWindow->GetHeight();;
 	}
+	void EmpireWindow::SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc)
+	{
+		mWindow->SetKeyPressedCallback(callbackFunc);
+	}
+
+	void EmpireWindow::SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc)
+	{
+		mWindow->SetKeyReleasedCallback(callbackFunc);
+	}
+
+	void EmpireWindow::SetWindowCloseCallback(std::function<void()> callbackFunc)
+	{
+		mWindow->SetWindowCloseCallback(callbackFunc);
+	}
 }
