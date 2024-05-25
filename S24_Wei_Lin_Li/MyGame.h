@@ -14,8 +14,6 @@ public:
 	void OnKeyPressed(const Empire::KeyPressed& e);
 	void OnKeyReleased(const Empire::KeyReleased& e);
 	void UpdateBearPosition();
-	void DropItem();
-	void LostHeart();
 
 
 private:

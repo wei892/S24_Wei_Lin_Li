@@ -1,7 +1,6 @@
 #pragma once
 
-#include "pch.h"
-#include "ShaderImplement.h"
+#include "../ShaderImplement.h"
 
 namespace Empire
 {

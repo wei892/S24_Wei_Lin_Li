@@ -138,7 +138,7 @@
     <ClInclude Include="include\Empire.h" />
     <ClInclude Include="src\codeGLFW\WindowGLFW.h" />
     <ClInclude Include="src\codeOpenGL\ImageOpenGL.h" />
-    <ClInclude Include="src\codeOpenGL\RendererOpenGl.h" />
+    <ClInclude Include="src\codeOpenGL\RendererOpenGL.h" />
     <ClInclude Include="src\codeOpenGL\ShaderOpenGL.h" />
     <ClInclude Include="src\EmpireApplication.h" />
     <ClInclude Include="src\EmpireEvents.h" />
@@ -158,8 +158,7 @@
   <ItemGroup>
     <ClCompile Include="src\codeGLFW\WindowGLFW.cpp" />
     <ClCompile Include="src\codeOpenGL\ImageOpenGL.cpp" />
-    <ClCompile Include="src\codeOpenGL\RendererOpenGl.cpp" />
-    <ClCompile Include="src\codeOpenGL\Shader.cpp" />
+    <ClCompile Include="src\codeOpenGL\RendererOpenGL.cpp" />
     <ClCompile Include="src\codeOpenGL\ShaderOpenGL.cpp" />
     <ClCompile Include="src\EmpireApplication.cpp" />
     <ClCompile Include="src\EmpireEvents.cpp" />
@@ -170,6 +169,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Renderer.cpp" />
+    <ClCompile Include="src\RendererImplement.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -182,9 +183,6 @@
     <ProjectReference Include="..\stbi\stbi.vcxproj">
       <Project>{76460b01-3c56-459d-ad6d-0daed51e5169}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

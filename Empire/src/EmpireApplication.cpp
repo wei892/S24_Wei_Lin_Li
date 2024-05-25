@@ -5,9 +5,9 @@
 #include "GLFW/glfw3.h"
 #include "stb_image.h"
 
+#include "Renderer.h"
 #include "Image.h"
 #include "Shader.h"
-#include "Renderer.h"
 #include "EmpireKeys.h"
 
 namespace Empire

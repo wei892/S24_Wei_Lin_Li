@@ -1,7 +1,6 @@
 #pragma once
 
 #include "RendererImplement.h"
-#include "Shader.h"
 
 namespace Empire
 {

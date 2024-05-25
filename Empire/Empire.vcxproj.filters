@@ -60,9 +60,6 @@
     <ClInclude Include="src\RendererImplement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\codeOpenGL\RendererOpenGl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\EmpireEvents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -70,6 +67,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Unit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\codeOpenGL\RendererOpenGL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -89,9 +89,6 @@
     <ClCompile Include="src\codeOpenGL\ImageOpenGL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\codeOpenGL\Shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\codeOpenGL\ShaderOpenGL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -101,17 +98,20 @@
     <ClCompile Include="src\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\codeOpenGL\RendererOpenGl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\EmpireEvents.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
+    <ClCompile Include="src\codeOpenGL\RendererOpenGL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RendererImplement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

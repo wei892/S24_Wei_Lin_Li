@@ -1,9 +1,6 @@
 #pragma once
 
-//#include "pch.h"
 #include "Ultility.h"
-
-
 namespace Empire
 {
 	class EMPIRE_API KeyPressed

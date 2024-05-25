@@ -1,10 +1,9 @@
 #include "pch.h"
-#include "RendererOpenGl.h"
 
+#include "RendererOpenGL.h"
 #define GLFW_INCLUDE_NONE
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
-
 #include "EmpireWindow.h"
 
 namespace Empire
@@ -113,7 +112,4 @@ namespace Empire
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
     }
-
 }
-
-

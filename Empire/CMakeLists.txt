@@ -45,15 +45,12 @@ target_compile_definitions(Empire
         EMPIRE_OPENGL
 )
 
-
 if (MSVC)
     target_compile_definitions(Empire PUBLIC EMPIRE_MS_COMPILER)
 endif()
 
-# target_include_directories(Empire PRIVATE include)
-# target_include_directories(Empire PRIVATE src)
 target_include_directories(Empire PRIVATE ../glfw/include)
-target_include_directories(Empire PRIVATE ../Sun)
+target_include_directories(Empire PRIVATE ../Empire/src)
 target_include_directories(Empire PRIVATE ../glad/include)
 target_include_directories(Empire PRIVATE ../stbi)
 
@@ -63,6 +60,6 @@ target_link_libraries(Empire glfw)
 target_link_libraries(Empire glad)
 target_link_libraries(Empire stbi)
 
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Sun)
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug/Sun)
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release/Sun)
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Empire)
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug/Empire)
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release/Empire)
