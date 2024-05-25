@@ -1,0 +1,5 @@
+Unique features
+Randomized drops of three unique items - stars, flower, and bees. They are given a random x-axis in which they fall from. The bees act as an enemy item where players lose health when their character collides with the bee object.
+
+There are three lives give to players. Once those three lives have been taken away, players will end the game.
+
