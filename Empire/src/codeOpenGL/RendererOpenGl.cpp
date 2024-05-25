@@ -16,7 +16,6 @@ namespace Empire
 			EMPIRE_ERROR("Failed to initialize GLAD");
 			return;
 		}
-        //mDefaultShader{ "../Assets/Shaders/defaultVertexShader.glsl", "../Assets/Shaders/defaultFragmentShader.glsl" };
         mShaderPtr = std::unique_ptr<Shader>{ new Shader { "../Empire/Assets/Shaders/defaultVertexShader.glsl", "../Empire/Assets/Shaders/defaultFragmentShader.glsl" } };
 
 		glEnable(GL_BLEND);

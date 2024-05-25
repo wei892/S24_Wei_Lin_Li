@@ -50,6 +50,8 @@ if (MSVC)
     target_compile_definitions(Empire PUBLIC EMPIRE_MS_COMPILER)
 endif()
 
+# target_include_directories(Empire PRIVATE include)
+# target_include_directories(Empire PRIVATE src)
 target_include_directories(Empire PRIVATE ../glfw/include)
 target_include_directories(Empire PRIVATE ../Sun)
 target_include_directories(Empire PRIVATE ../glad/include)

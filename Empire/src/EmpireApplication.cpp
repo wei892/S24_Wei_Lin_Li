@@ -15,12 +15,11 @@ namespace Empire
     EmpireApplication::EmpireApplication()
     {
          EmpireWindow::Init();
-         EmpireWindow::GetWindow()->Create(1000, 800);
+         EmpireWindow::GetWindow()->Create(1000, 1000);
 
          SetWindowCloseCallback([this]() {DefaultWindowCloseHandler(); });
 
          Renderer::Init();
-
     }
 
     void EmpireApplication::Initialize()
