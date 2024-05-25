@@ -30,7 +30,6 @@ void MyGame::OnUpdate()
 			touchedORFallen = true;
 		}
 		else if (Empire::UnitsOverlap(bear, itemDropped) && isBee == true) {
-			std::cout << "Overlap" << std::endl;
 			lifeCount -= 1;
 			touchedORFallen = true;
 			isBee = false;
@@ -47,10 +46,8 @@ void MyGame::OnUpdate()
 			itemXPos = randomXPos;
 			itemYPos = 1000;
 			touchedORFallen = false;
-			std::cout << "touching" << std::endl;
 		}
 		else {
-			std::cout << "Not touching" << std::endl;
 			itemYPos -= 20;
 		}
 
@@ -137,59 +134,3 @@ void MyGame::UpdateBearPosition()
 		bearXPos = std::min(rightBoundary - bearRight.GetWidth(), bearXPos + bearSpeed);
 	}
 }
-
-//void MyGame::DropItem()
-//{
-//	std::this_thread::sleep_for(std::chrono::seconds(1));
-//	int randomItemNum = rand() % 3 + 1;
-//	int randomXAsix = rand() % (itemDroprightBound - itemDropLeftBound) + itemDropLeftBound;
-//
-//	if (randomItemNum == 1) {
-//		Empire::Renderer::Draw(mBear[(int)mDirection], bearXPos, bearYPos);
-//	}
-//	else if (randomItemNum == 2){
-//		
-//	}
-//	else {
-//
-//	}
-	
-	
-	//int itemXPos = 500; // Starting X position
-	//int itemYPos = 0; // Starting Y position (top of the screen)
-	//const int dropSpeed = 5; // Speed of dropping
-
-	//while (itemYPos < screenHeight - itemToDrop.GetHeight())
-	//{
-	//	// Clear the screen or background
-	//	Empire::Renderer::ClearScreen();
-	//	Empire::Renderer::Draw(background, 0, 0);
-
-	//	// Draw other game elements if necessary
-	//	RenderLifes();
-	//	UpdateBearPosition();
-	//	Empire::Renderer::Draw(mBear[(int)mDirection], bearXPos, bearYPos);
-
-	//	// Draw the dropping item
-	//	Empire::Renderer::Draw(itemToDrop, itemXPos, itemYPos);
-
-	//	// Update item position
-	//	itemYPos += dropSpeed;
-
-	//	// Refresh the screen to show the updated position
-	//	Empire::Renderer::RefreshScreen();
-
-	//	// Add a small delay to control the drop speed
-	//	std::this_thread::sleep_for(std::chrono::milliseconds(16)); // ~60 FPS
-	//}
-
-	//// Ensure the item is drawn at the final position (bottom of the screen)
-	//Empire::Renderer::Draw(itemToDrop, itemXPos, screenHeight - itemToDrop.GetHeight());
-	//Empire::Renderer::RefreshScreen();
-
-//}
-
-//void MyGame::LostHeart()
-//{
-//
-//}
